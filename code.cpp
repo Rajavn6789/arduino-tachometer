@@ -46,7 +46,7 @@ void loop() {
     int percentageRPM = Math.floor((averagedRpm / MAX_RPM) * 100);
     
     // number of LEDs to light up
-    int numLeds = Math.ceil(percentageRPM / (100 / TOTAL_LEDS);
+    int numLeds = Math.ceil(percentageRPM / (100 / TOTAL_LEDS));
 
     Serial.println(averagedRpm);
     
