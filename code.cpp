@@ -3,6 +3,7 @@
  */
 
 const int SIGNAL_PIN = 4;
+const int TOTAL_LEDS = 24;
 const int LED_UPDATE_INTERVAL = 200;
 const int MAX_RPM = 8000;
 
@@ -43,7 +44,9 @@ void loop() {
     
     // number of LEDs to light up based on percentage
     int percentageRPM = Math.floor((averagedRpm / MAX_RPM) * 100);
-    int numLeds = Math.ceil(percentageRPM / 6.25);
+    
+    // number of LEDs to light up
+    int numLeds = Math.ceil(percentageRPM / (100 / TOTAL_LEDS);
 
     Serial.println(averagedRpm);
     
