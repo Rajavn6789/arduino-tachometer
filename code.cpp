@@ -2,10 +2,10 @@
  * SIMPLE ARDUINO BIKE TACHOMETER
  */
 
-const int SIGNAL_PIN = 4;
 const int TOTAL_LEDS = 24;
 const int LED_UPDATE_INTERVAL = 200;
 const int MAX_RPM = 8000;
+const int interruptPin = 2;
 
 int lastRpmValue = 0;
 volatile int sparkFireCount = 0;
@@ -18,8 +18,8 @@ void incrementRpmCountRoutine () {
 }
 
 void setup() {
-  pinMode(SIGNAL_PIN, INPUT_PULLUP);
-  attachInterrupt(digitalPinToInterrupt(1), incrementRpmCountRoutine, FALLING);
+  pinMode(interruptPin, INPUT_PULLUP);
+  attachInterrupt(digitalPinToInterrupt(interruptPin), incrementRpmCountRoutine, FALLING);
   Serial.begin(9600);
 }
 
