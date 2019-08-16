@@ -19,7 +19,7 @@ void incrementRpmCountRoutine () {
 
 void setup() {
   pinMode(SIGNAL_PIN, INPUT_PULLUP);
-  attachInterrupt(1, incrementRpmCountRoutine, FALLING);
+  attachInterrupt(digitalPinToInterrupt(1), incrementRpmCountRoutine, FALLING);
   Serial.begin(9600);
 }
 
